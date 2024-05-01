@@ -1,24 +1,24 @@
 import { useState } from "react";
-import { choiceType, OptionType } from "../../Types";
-import { getOutcome } from "../components/PlayZon/getOutcome";
-import { GET_Options } from "../data";
+import { choiceType, OptionType } from "../../../Types";
+import { getOutcome } from "../../components/PlayZon/getOutcome";
+import { GET_Options } from "../../data";
 
 export default function useGame() {
 	const [userChoice, setUserChoice] = useState<choiceType>(null);
 	const [bootChoice, setBootChoice] = useState<choiceType>(null);
 	const [resultPlay, setResultPlay] = useState<string>("Let's Play!!");
-	const [isGameStarted, setIsGameStarted] = useState<boolean>(false);
+	const [gameStarted, setGameStarted] = useState<boolean>(false);
 
 	function handleOptionClick(option: OptionType) {
 		setUserChoice(option);
-		setIsGameStarted(true);
+		setGameStarted(true);
 		setTimeout(() => {
 			const randomIndex = Math.floor(Math.random() * 3);
 			const bootOption = GET_Options[randomIndex];
 			setBootChoice(bootOption);
 			const outcome = getOutcome(option.id, bootOption.id);
 			setResultPlay(outcome);
-			setIsGameStarted(false);
+			setGameStarted(false);
 		}, 2500); //2.5s
 	}
 
@@ -28,8 +28,8 @@ export default function useGame() {
 		bootChoice,
 		setBootChoice,
 		resultPlay,
-		isGameStarted,
-		setIsGameStarted,
+		gameStarted,
+		setGameStarted,
 		handleOptionClick,
 	};
 }

@@ -1,3 +1,3 @@
 export * from "./PlayBattle";
-export * from "./getOutcome";
 export * from "./SelectOptions";
+export * from "./getOutcome";

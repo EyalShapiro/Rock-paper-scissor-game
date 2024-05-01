@@ -7,13 +7,13 @@ interface PlayBattleProps {
 	userChoice: choiceType;
 	bootChoice: choiceType;
 	resultPlay: string;
-	isGameStarted: boolean;
+	gameStarted: boolean;
 }
 export const PlayBattle: React.FC<PlayBattleProps> = ({
 	userChoice,
 	bootChoice,
 	resultPlay,
-	isGameStarted,
+	gameStarted,
 	children,
 }) => {
 	return (
@@ -23,7 +23,7 @@ export const PlayBattle: React.FC<PlayBattleProps> = ({
 				<Result choice={userChoice} />
 				{children}
 			</div>
-			<h2 className={`${isGameStarted ? "start" : ""}`}>{resultPlay}</h2>
+			<h2 className={`${gameStarted ? "start" : ""}`}>{resultPlay}</h2>
 		</PlayBattleStyle>
 	);
 };

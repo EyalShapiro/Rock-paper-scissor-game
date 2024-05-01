@@ -1,35 +1,40 @@
 import styled from "styled-components";
-
 import React from "react";
 import LogoPag from "./image-rules.svg";
-interface style extends React.CSSProperties {}
-interface props {
-	style?: style;
+
+// Interface for props
+interface Props {
+	style?: React.CSSProperties;
 	width: string;
 	height: string;
 }
-export function RulesIcon({ width, height }: props) {
+
+// RulesIcon component
+export function RulesIcon({ style, width, height }: Props) {
 	return (
-		<RulesIconStyle height={height} width={width}>
+		<RulesIconStyle style={{ ...style }}>
 			<img
-				style={{ height: "10rem", widows: "10rem" }}
+				className='Logo'
+				width={width}
+				height={height}
 				src={LogoPag}
-				alt={"logo"}
+				alt='logo'
 			/>
 		</RulesIconStyle>
 	);
 }
 
-const RulesIconStyle = styled.div<{ width: string; height: string }>`
-	height: 100%; /* Inherits height from its container */
-	width: 100%; /* Inherits width from its container */
-	display: inline-block;
+// Styled component for styling
+const RulesIconStyle = styled.div`
+	display: flex;
 	align-items: center;
 	justify-content: center; /* Center horizontally by default */
 	flex-direction: column;
-	align-items: stretch;
-
+	cursor: pointer;
+	:hover {
+		filter: drop-shadow(0 0 2em #61a9fbaa);
+	}
 	/* Optional props for customization */
-	width: ${({ width }) => width || "auto"}; /* Allow overriding width */
-	height: ${({ height }) => height || "auto"}; /* Allow overriding height */
+	width: fit-content;
+	height: fit-content;
 `;

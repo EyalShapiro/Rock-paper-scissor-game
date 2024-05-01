@@ -5,21 +5,20 @@ import { choiceType, GetOptionsType, OptionType } from "../../../../Types";
 
 interface SelectOptionsProps {
 	children?: React.ReactNode;
-
-	isGameStarted: boolean;
+	gameStarted: boolean;
 	arrOptions: GetOptionsType;
 	choice: choiceType;
 	handleOptionClick: (option: OptionType) => void;
 }
 
 export const SelectOptions: React.FC<SelectOptionsProps> = ({
-	isGameStarted,
+	gameStarted,
 	arrOptions,
 	choice,
 	handleOptionClick,
 }) => {
 	return (
-		<SelectOptionsStyle className={`${isGameStarted ? "start" : ""}`}>
+		<SelectOptionsStyle className={`${gameStarted ? "start" : ""}`}>
 			{arrOptions.map((option: OptionType) => (
 				<Option
 					key={option.id} /**key is out  of the comport for this task */

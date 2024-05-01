@@ -1,23 +1,32 @@
-import { useState } from "react";
+import "./App.css";
 import Header from "./components/Header";
 import usePreventDevTools from "./hook/usePreventDevTools";
-import InputUser from "./components/UserNameInput";
 import styled from "styled-components";
-import Game from "./page/Game";
+import Game from "./page/GamePage/Game";
+
 function App() {
-	const [pageStart, setPageStart] = useState<boolean>(false);
 	usePreventDevTools();
+
 	return (
-		<AppStyle>
+		<AppContainer>
 			<Header />
-			{!pageStart && <InputUser onClick={() => setPageStart(true)} />}
-			{pageStart && <Game />}
-		</AppStyle>
+			<ContentContainer>
+				<Game />
+			</ContentContainer>
+		</AppContainer>
 	);
 }
 
 export default App;
-const AppStyle = styled.div`
+
+const AppContainer = styled.div`
 	width: 100%;
 	height: 100%;
+	display: flex;
+	flex-direction: column;
+`;
+
+const ContentContainer = styled.div`
+	flex: 1;
+	overflow-y: auto;
 `;
