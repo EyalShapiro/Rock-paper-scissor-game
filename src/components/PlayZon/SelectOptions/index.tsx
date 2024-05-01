@@ -22,6 +22,7 @@ export const SelectOptions: React.FC<SelectOptionsProps> = ({
 		<SelectOptionsStyle className={`${isGameStarted ? "start" : ""}`}>
 			{arrOptions.map((option: OptionType) => (
 				<Option
+					key={option.id} /**key is out  of the comport for this task */
 					choice={choice}
 					handleOptionClick={handleOptionClick}
 					option={option}

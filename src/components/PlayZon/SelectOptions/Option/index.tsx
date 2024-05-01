@@ -9,7 +9,6 @@ interface props {
 export function Option({ choice, handleOptionClick, option }: props) {
 	return (
 		<OptionImage
-			key={option.id}
 			className={`${choice?.id === option.id ? "active" : ""}`}
 			onClick={() => handleOptionClick(option)}
 		>

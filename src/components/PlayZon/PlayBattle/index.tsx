@@ -29,6 +29,8 @@ export const PlayBattle: React.FC<PlayBattleProps> = ({
 };
 
 const PlayBattleStyle = styled.div<{ $result: string }>`
+	width: 100%;
+	height: 100%;
 	padding-block: 10px 1px;
 	h2 {
 		text-align: center;
@@ -47,6 +49,10 @@ const PlayBattleStyle = styled.div<{ $result: string }>`
 	}
 	.imag {
 		display: flex;
-		column-gap: 7rem;
+		justify-items: center;
+
+		width: 100%;
+		height: 100%;
+		position: sticky;
 	}
 `;
