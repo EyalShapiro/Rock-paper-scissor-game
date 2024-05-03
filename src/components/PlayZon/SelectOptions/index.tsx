@@ -10,13 +10,7 @@ interface SelectOptionsProps {
 	choice: choiceType;
 	handleOptionClick: (option: OptionType) => void;
 }
-
-export const SelectOptions: React.FC<SelectOptionsProps> = ({
-	gameStarted,
-	arrOptions,
-	choice,
-	handleOptionClick,
-}) => {
+export const SelectOptions: React.FC<SelectOptionsProps> = ({ gameStarted, arrOptions, choice, handleOptionClick }) => {
 	return (
 		<SelectOptionsStyle className={`${gameStarted ? "start" : ""}`}>
 			{arrOptions.map((option: OptionType) => (

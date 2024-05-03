@@ -1,1 +1,1 @@
-export * from './OptionType'
+export * from "./OptionType";

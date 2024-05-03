@@ -6,7 +6,7 @@ export default function Header() {
 		<HeaderContainer>
 			<HeaderStyle>
 				<h1>{`Rock-paper-scissor-game`}</h1>
-				<RulesIcon width='60%' height='50%' />
+				<RulesIcon width="60%" height="50%" />
 			</HeaderStyle>
 		</HeaderContainer>
 	);

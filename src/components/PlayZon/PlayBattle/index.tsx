@@ -17,8 +17,8 @@ export const PlayBattle: React.FC<PlayBattleProps> = ({
 	children,
 }) => {
 	return (
-		<PlayBattleStyle $result={resultPlay} className='result_field'>
-			<div className='imag'>
+		<PlayBattleStyle $result={resultPlay} className="result_field">
+			<div className="imag">
 				<Result choice={bootChoice} isBootPlay={true} />
 				<Result choice={userChoice} />
 				{children}

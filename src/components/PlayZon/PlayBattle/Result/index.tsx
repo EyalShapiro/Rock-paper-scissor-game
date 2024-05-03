@@ -32,8 +32,7 @@ const ResultImage = styled.span<{ $isBootPlay: boolean }>`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background: ${(Props) =>
-		Props.$isBootPlay ? "darkorange" : "darkturquoise"};
+	background: ${(Props) => (Props.$isBootPlay ? "darkorange" : "darkturquoise")};
 	outline: outset teal 0.875rem;
 	img {
 		display: flex;

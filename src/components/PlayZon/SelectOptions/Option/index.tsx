@@ -8,15 +8,8 @@ interface props {
 }
 export function Option({ choice, handleOptionClick, option }: props) {
 	return (
-		<OptionImage
-			className={`${choice?.id === option.id ? "active" : ""}`}
-			onClick={() => handleOptionClick(option)}
-		>
-			{option.image ? (
-				<img src={String(option.image)} alt={option.name} />
-			) : (
-				<></> // <option.Jsx_Ico />
-			)}
+		<OptionImage className={`${choice?.id === option.id ? "active" : ""}`} onClick={() => handleOptionClick(option)}>
+			{option.image && <img src={String(option.image)} alt={option.name} />}
 			<h3>
 				<p>{option.name}</p>
 			</h3>
