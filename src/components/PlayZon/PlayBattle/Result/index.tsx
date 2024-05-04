@@ -1,7 +1,7 @@
 import styled, { keyframes } from "styled-components";
 import { Container } from "../../../../style";
 import { choiceType } from "../../../../../Types";
-import { spockImage } from "../../../../Icon";
+import { spockImage } from "../../../../assets";
 
 interface ResultProps {
 	choice: choiceType;
@@ -26,8 +26,9 @@ const shakeAnimation = keyframes<{ $isBootPlay: boolean }>`
 const ResultImage = styled.span<{ $isBootPlay: boolean }>`
 	width: 100%;
 	height: 100%;
-	margin: 1rem;
-	padding: 0%;
+	margin: 2rem;
+	padding: 0.1%;
+	border-radius: 1rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -39,6 +40,7 @@ const ResultImage = styled.span<{ $isBootPlay: boolean }>`
 		justify-items: center;
 		position: relative;
 		width: 100px;
+		margin: 1px;
 		transform: rotate(${(props) => (props.$isBootPlay ? "90deg" : "-90deg")})
 			rotateY(${(props) => (props.$isBootPlay ? "0deg" : "180deg")});
 	}
@@ -46,5 +48,15 @@ const ResultImage = styled.span<{ $isBootPlay: boolean }>`
 	${Container}.start & {
 		transform-origin: ${(props) => (props.$isBootPlay ? "left" : "right")};
 		animation: ${shakeAnimation} 0.7s ease infinite;
+	}
+	h3 {
+		font-size: xx-large;
+		margin-top: 1rem;
+		pointer-events: none;
+		color: aliceblue;
+		border-radius: 1rem;
+		background-color: rgba(132, 120, 120, 0.1);
+		text-decoration-line: underline;
+		text-decoration-color: silver;
 	}
 `;

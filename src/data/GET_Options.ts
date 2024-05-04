@@ -1,8 +1,12 @@
-import { GetOptionsType } from "../../../Types";
+import { GetOptionsType } from "../../Types";
 import {
-  paperImage, rockImage, scissorsImage,
-  FaRegHandPaper, FaRegHandScissors, FaRegHandRock
-} from "../../Icon";
+  paperImage,
+  rockImage,
+  scissorsImage,
+  FaRegHandPaper,
+  FaRegHandScissors,
+  FaRegHandRock,
+} from "../assets";
 
 export const GET_Options: GetOptionsType = [
   { id: 0, name: "Rock", image: rockImage, Jsx_Ico: FaRegHandRock },

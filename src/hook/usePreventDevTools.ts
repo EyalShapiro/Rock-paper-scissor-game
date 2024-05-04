@@ -1,19 +1,16 @@
 import { useEffect } from "react";
 
-function GetDevUrl() {
+function isProductionEnvironment() {
   const portListDev: Array<number | string> = [
     3000, 3001, 3002, 5173, 5174, 8080,
   ] as const;
-  const isProductionEnvironment = !portListDev.some((port) =>
-    window.location.href.includes(`http://localhost:${port}`),
+  return !portListDev.some((port) => window.location.href.includes(`http://localhost:${port}`)
   );
-  return isProductionEnvironment;
 }
 
-const usePreventDevTools = () => {
-  const isProductionEnvironment = GetDevUrl();
-
+const usePreventDevTools = async () => {
   useEffect(() => {
+
     const handleKeyDown = (_event: KeyboardEvent) => {
       if (!isProductionEnvironment) return; // Exit if not in production environment
       switch (_event.keyCode) {
@@ -39,18 +36,18 @@ const usePreventDevTools = () => {
       event.preventDefault();
     };
 
-    if (isProductionEnvironment) {
+    if (isProductionEnvironment()) {
       document.addEventListener("keydown", handleKeyDown);
       document.addEventListener("contextmenu", handleContextMenu);
     }
 
     return () => {
-      if (isProductionEnvironment) {
+      if (isProductionEnvironment()) {
         document.removeEventListener("keydown", handleKeyDown);
         document.removeEventListener("contextmenu", handleContextMenu);
       }
     };
-  }, [isProductionEnvironment]);
+  }, []);
 };
 
 export default usePreventDevTools;

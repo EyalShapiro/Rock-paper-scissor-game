@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { choiceType, OptionType } from "../../../Types";
-import { getOutcome } from "../../components/PlayZon/getOutcome";
-import { GET_Options } from "../../data";
+import { GET_Options, getOutcome } from "../../data";
 
 export default function useGame() {
   const [userChoice, setUserChoice] = useState<choiceType>(null);

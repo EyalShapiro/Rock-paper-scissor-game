@@ -1,18 +1,19 @@
 import styled from "styled-components";
-import { RulesIcon } from "../../Icon/logo";
+import { OptionIcon } from "../../assets";
 
 export default function Header() {
 	return (
 		<HeaderContainer>
 			<HeaderStyle>
 				<h1>{`Rock-paper-scissor-game`}</h1>
-				<RulesIcon width="60%" height="50%" />
+				<OptionIcon width="60%" height="50%" />
 			</HeaderStyle>
 		</HeaderContainer>
 	);
 }
 
 const HeaderContainer = styled.div`
+	margin: 0%;
 	position: sticky;
 	top: 0;
 	z-index: 1;

@@ -1,5 +1,5 @@
 import { IconType } from "react-icons";
-interface ico extends IconType { }
+interface ico extends IconType {}
 export interface OptionType {
   id: number;
   name: string;

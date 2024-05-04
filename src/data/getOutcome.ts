@@ -8,7 +8,7 @@ export const getOutcome = (userValue: number, bootValue: number): string => {
   const outComeValue = outcomes[userValue][bootValue].trim();
   return outComeValue === "User"
     ? "You Won!!"
-    : outComeValue === "boot" ? "boot Won!!"
+    : outComeValue === "boot"
+      ? "boot Won!!"
       : "Match Draw";
 };
-const style = { color: '#ffff' }

@@ -1,1 +1,2 @@
-export * from "./const/GET_Options";
+export * from "./GET_Options";
+export * from "./getOutcome";

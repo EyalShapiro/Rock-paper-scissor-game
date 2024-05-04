@@ -1,4 +1,3 @@
-export * from "./Reactg-icon-fa";
 import rockImage from "./rock.png";
 import paperImage from "./paper.png";
 import scissorsImage from "./scissors.png";

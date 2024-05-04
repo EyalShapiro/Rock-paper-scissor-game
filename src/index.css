@@ -6,7 +6,7 @@
   color-scheme: light dark;
   color: seashell;
   background-color: #213547;
-
+  background-image: url("../src/Icon/background.svg");
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

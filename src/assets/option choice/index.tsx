@@ -10,9 +10,9 @@ interface Props {
 }
 
 // RulesIcon component
-export function RulesIcon({ style, width, height }: Props) {
+export function OptionIcon({ style, width, height }: Props) {
   return (
-    <RulesIconStyle style={{ ...style }}>
+    <OptionIconStyle style={{ ...style }}>
       <img
         className="Logo"
         width={width}
@@ -20,12 +20,12 @@ export function RulesIcon({ style, width, height }: Props) {
         src={LogoPag}
         alt="logo"
       />
-    </RulesIconStyle>
+    </OptionIconStyle>
   );
 }
 
 // Styled component for styling
-const RulesIconStyle = styled.div`
+const OptionIconStyle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center; /* Center horizontally by default */

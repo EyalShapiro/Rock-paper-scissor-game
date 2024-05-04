@@ -27,6 +27,6 @@ const AppContainer = styled.div`
 `;
 
 const ContentContainer = styled.div`
-	flex: 1;
 	overflow-y: auto;
+	background: "#213547";
 `;
